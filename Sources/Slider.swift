@@ -112,7 +112,7 @@ open class Slider : UIControl {
     
     private let valueView = ValueView()
     
-    open var valueViewColor: UIColor? {
+    @objc open var valueViewColor: UIColor? {
         didSet {
             updateValueViewColor()
         }
@@ -194,26 +194,26 @@ open class Slider : UIControl {
 		}
 	}
     
-    open var contentViewColor: UIColor? {
+    @objc open var contentViewColor: UIColor? {
         didSet {
             updateValueViewColor()
             setNeedsLayout()
         }
     }
     
-    open var shadowOffset: CGSize = .zero {
+    @objc open var shadowOffset: CGSize = .zero {
         didSet {
             setNeedsLayout()
         }
     }
 
-    open var shadowBlur: CGFloat = 0 {
+    @objc open var shadowBlur: CGFloat = 0 {
         didSet {
             setNeedsLayout()
         }
     }
     
-    open var shadowColor: UIColor? {
+    @objc open var shadowColor: UIColor? {
         didSet {
             setNeedsLayout()
         }
