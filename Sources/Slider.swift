@@ -265,7 +265,7 @@ open class Slider : UIControl {
             if let color = shadowColor {
                 context.cgContext.setShadow(offset: shadowOffset, blur: shadowBlur, color: color.cgColor)
             }
-            contentViewColor?.setFill()
+            UIColor.clear?.setFill()
             let inset = UIEdgeInsets(top: inset.top * -1, left: inset.left * -1, bottom: inset.bottom * -1, right: inset.right * -1)
             UIBezierPath(roundedRect: backgroundImageView.bounds.inset(by: inset), cornerRadius: contentViewCornerRadius).fill()
         })
