@@ -93,7 +93,7 @@ open class Slider : UIControl {
 		}
 	}
     
-    open var attributedTextForFraction: (CGFloat) -> (NSAttributedString) = { fraction in
+    @objc open var attributedTextForFraction: (CGFloat) -> (NSAttributedString) = { fraction in
         let formatter = NumberFormatter()
         formatter.maximumFractionDigits = 2
         formatter.maximumIntegerDigits = 0
