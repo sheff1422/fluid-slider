@@ -174,12 +174,12 @@ open class Slider : UIControl {
 		}
 	}
 
-    open func setMinimumLabelAttributedText(_ attributedText: NSAttributedString?) {
+    @objc open func setMinimumLabelAttributedText(_ attributedText: NSAttributedString?) {
         minimumLabel.attributedText = attributedText
         setNeedsLayout()
     }
     
-    open func setMaximumLabelAttributedText(_ attributedText: NSAttributedString?) {
+    @objc open func setMaximumLabelAttributedText(_ attributedText: NSAttributedString?) {
         maximumLabel.attributedText = attributedText
         setNeedsLayout()
     }
