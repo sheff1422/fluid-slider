@@ -78,12 +78,14 @@ open class Slider : UIControl {
     
     // MARK: - Value
     
-    open var fraction: CGFloat = 0 {
+    @objc open var fraction: CGFloat = 0 {
         didSet {
             updateValueViewText()
 			layoutValueView()
         }
     }
+    
+    @objc open var sliderThumbCenterPoint: CGPoint = .zero
 
 	open var showFractionOnlyWhileTracking = false {
 		didSet {
@@ -272,6 +274,7 @@ open class Slider : UIControl {
     private func layoutValueView() {
         let bounds = self.contentView.bounds.inset(by: UIEdgeInsets(top: 0, left: valueViewMargin, bottom: 0, right: valueViewMargin))
         let centerX = fraction * bounds.size.width + bounds.minX
+        sliderThumbCenterPoint = CGPoint(x: centerX, y: self.contentView.bounds.size.height / 2)
         setValueViewPositionX(to: centerX)
     }
     
