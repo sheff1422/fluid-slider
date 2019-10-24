@@ -63,8 +63,8 @@ class MetaballFilter : CIFilter {
         var image = CIFilter(name: "CIColorControls", parameters: [kCIInputBrightnessKey: 1, kCIInputSaturationKey: 0, kCIInputContrastKey: 0, kCIInputImageKey: inputImage])?.outputImage
         
         // blur
-        image = CIFilter(name: "CIGaussianBlur", parameters: [kCIInputRadiusKey: Double(blurRadius), kCIInputImageKey: image!])?.outputImage
-
+        image = image?.applyingGaussianBlur(sigma: Double(blurRadius))
+        
         // threshold
         ThresholdFilter.register()
         image = image?.applyingFilter("FLDThresholdFilter", parameters: ["threshold": threshold])

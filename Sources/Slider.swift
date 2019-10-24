@@ -350,11 +350,9 @@ open class Slider : UIControl {
         let offsetY = -contentView.bounds.height / 2
         let bounds = CGRect(x: valueView.frame.origin.x, y: offsetY, width: valueView.frame.size.width, height: -offsetY + bottomMargin).insetBy(dx: -radius, dy: 0)
 
-        UIGraphicsBeginImageContext(bounds.size)
-        let drawingContext = UIGraphicsGetCurrentContext()
-        contentView.layer.render(in: drawingContext!)
-        let inputImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
+        let inputImage = UIGraphicsImageRenderer(bounds: bounds).image {
+            contentView.layer.render(in: $0.cgContext)
+        }
         
         filter.blurRadius = radius
         filter.threshold = 0.49
@@ -369,14 +367,13 @@ open class Slider : UIControl {
         filterView.frame = bounds
         
         if filterViewMask == nil {
-            UIGraphicsBeginImageContext(bounds.size)
-            let drawingContext = UIGraphicsGetCurrentContext()
-            UIColor.white.setFill()
-            drawingContext!.fill(CGRect(origin: .zero, size: bounds.size))
-            drawingContext!.clear(CGRect(x: 0, y: bounds.size.height - bottomMargin, width: radius, height: bottomMargin))
-            drawingContext!.clear(CGRect(x: bounds.size.width - radius, y: bounds.size.height - bottomMargin, width: radius, height: bottomMargin))
-            filterViewMask = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
+            let renderer = UIGraphicsImageRenderer(bounds: CGRect(origin: .zero, size: bounds.size))
+            filterViewMask = renderer.image(actions: { context in
+                UIColor.white.setFill()
+                context.fill(CGRect(origin: .zero, size: bounds.size))
+                context.cgContext.clear(CGRect(x: 0, y: bounds.size.height - bottomMargin, width: radius, height: bottomMargin))
+                context.cgContext.clear(CGRect(x: bounds.size.width - radius, y: bounds.size.height - bottomMargin, width: radius, height: bottomMargin))
+            })
             (filterView.mask as? UIImageView)?.image = filterViewMask
         }
     }
