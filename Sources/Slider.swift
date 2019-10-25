@@ -13,16 +13,7 @@ private let kBlurRadiusDefault: CGFloat = 12
 private let kBlurRadiusIphonePlus: CGFloat = 18 // blur a little bit more to avoid fluid disconnection effect
 
 private func isAnimationAllowed() -> Bool {
-    let isUnderHighload: Bool
-    if #available(iOS 11.0, *) {
-        isUnderHighload = ProcessInfo.processInfo.thermalState == .serious || ProcessInfo.processInfo.thermalState == .critical
-    } else {
-        isUnderHighload = false
-    }
-    
-    let isSimulator = TARGET_OS_SIMULATOR != 0
-    
-    return !isSimulator && !ProcessInfo.processInfo.isLowPowerModeEnabled && !UIAccessibility.isReduceMotionEnabled && !isUnderHighload
+    return false
 }
 
 open class Slider : UIControl {
