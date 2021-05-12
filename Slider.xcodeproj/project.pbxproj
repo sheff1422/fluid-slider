@@ -12,6 +12,7 @@
 		1176CDE71F97F8EE00C75DFC /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176CDE41F97F8EE00C75DFC /* Filters.swift */; };
 		1176CDE81F97F8EE00C75DFC /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1176CDE51F97F8EE00C75DFC /* Slider.swift */; };
 		1176CDEB1F97F8FF00C75DFC /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1176CDEA1F97F8FF00C75DFC /* pop.framework */; };
+		5B2DF2EF264BC69800ADCD43 /* AccessibilityReadingSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2DF2EE264BC69800ADCD43 /* AccessibilityReadingSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		1176CDE41F97F8EE00C75DFC /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		1176CDE51F97F8EE00C75DFC /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 		1176CDEA1F97F8FF00C75DFC /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
+		5B2DF2EE264BC69800ADCD43 /* AccessibilityReadingSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityReadingSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		1176CDDA1F97F87F00C75DFC /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5B2DF2EE264BC69800ADCD43 /* AccessibilityReadingSlider.swift */,
 				1176CDE41F97F8EE00C75DFC /* Filters.swift */,
 				1176CDDC1F97F87F00C75DFC /* Info.plist */,
 				1176CDDB1F97F87F00C75DFC /* Slider.h */,
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2DF2EF264BC69800ADCD43 /* AccessibilityReadingSlider.swift in Sources */,
 				1176CDE61F97F8EE00C75DFC /* ValueView.swift in Sources */,
 				1176CDE81F97F8EE00C75DFC /* Slider.swift in Sources */,
 				1176CDE71F97F8EE00C75DFC /* Filters.swift in Sources */,
