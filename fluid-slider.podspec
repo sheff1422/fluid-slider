@@ -9,5 +9,4 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/Ramotion/fluid-slider.git', :tag => s.version.to_s }
   s.source_files  = 'Sources/*.swift'
   s.dependency 'pop'
-  s.swift_version = '4.2'
 end
